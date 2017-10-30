@@ -4,11 +4,11 @@ import java.util.*;
 public class Runner {
 
     public static void main(String[] args) {
-        System.out.println("Hello user. What is your name?");
+        /*System.out.println("Hello user. What is your name?");
         Scanner sc = new Scanner(System.in);
         String a = sc.next();
         System.out.println(a + " is a very nice name.");
-        /*
+
         System.out.println("Hello " + a +"! should we make a new Section? (yes or no)");
         String b = sc.next();
         Section A = null;
@@ -35,7 +35,7 @@ public class Runner {
         }
         System.out.println("Great. You completed a section and you filled it with all the students listed above.");
         System.out.println("Lets see the section we created");
-        System.out.println("Name: " + A.name + ", Maximum Size: " + A.maxSize + ", Teacher: " + A.teacher.firstName + " " + A.teacher.lastName);*/
+        System.out.println("Name: " + A.name + ", Maximum Size: " + A.maxSize + ", Teacher: " + A.teacher.firstName + " " + A.teacher.lastName);
         System.out.println("Great now that we have created a section with a teacher and students, you will need to try this yourself. What is the Section name?");
         String d = sc.next();
         System.out.println("What is the Maximum Class Size?");
@@ -58,9 +58,9 @@ public class Runner {
             System.out.println(k + "  last name");
             C.addStudent(j, k);
         }
-        /*for (int i = 0; i <= h; i++) {
+        for (int i = 0; i <= h; i++) {
             System.out.println("Student number " + (i+1) + "." + " There name is " + C.students.get(i).firstName + " " + C.students.get(i).lastName);
-        }*/
+        }
         System.out.println("Great. You completed a section and you filled it with all the students listed above.");
         System.out.println("Lets let the class run its course.");
         System.out.println("We realized that the class is over flowing with students. We need to remove one. Below is the class roster.");
@@ -70,7 +70,40 @@ public class Runner {
         System.out.println(" ");
         System.out.println("Enter the exact id on the next line.");
         int l = sc.nextInt();
-        C.removeStudent(l);
+        C.removeStudent(l);*/
+        System.out.println("Hello new user. What is your name?");
+        Scanner sc = new Scanner(System.in);
+        String a = sc.next();
+        System.out.println(a + ", you are the principal of a new school. You need to build this school from the ground up.");
+        System.out.println("How many classes would you like to create? (enter an integer and make sure not to add any letters or spaces)");
+        int b = 0;
+        if (sc.hasNextInt()) {
+            b = sc.nextInt();
+        }
+        else {
+            System.out.println("Error: You did not enter an integer. Please try again");
+            System.out.println("How many classes would you like to create? (enter an integer and make sure not to add any letters or spaces)");
+            if (sc.hasNextInt()) {
+                b = sc.nextInt();
+            }
+        }
+        for (int i = 0; i < b; i++); {
+            System.out.println("What subject does this class teach? (Ex: Calculus)");
+            String c = sc.next();
+            System.out.println("What is the max number of students that can be in this class? (Ex: 30)");
+            int d = 0;
+            if (sc.hasNextInt()) {
+                d = sc.nextInt();
+            }
+            else {
+                System.out.println("Error: You did not enter an integer. Please try again");
+                System.out.println("How many classes would you like to create? (enter an integer and make sure not to add any letters or spaces)");
+                if (sc.hasNextInt()) {
+                    d = sc.nextInt();
+                }
+            }
 
+            Section[] sectionList = new Section()
+        }
     }
 }

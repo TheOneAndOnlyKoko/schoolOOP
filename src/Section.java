@@ -19,10 +19,10 @@ public class Section {
         this.teacher = new Teacher(firstName, lastName);
     }
 
-    public void addStudent(String firstName, String lastName) {
+    public void addStudent(String firstName, String lastName, int aweScore) {
 
         if (students.size() <= maxSize) {
-            Student student = new Student(firstName, lastName);
+            Student student = new Student(firstName, lastName, aweScore);
             students.add(student);
             sectionSeatsRemaining();
         }
@@ -34,8 +34,8 @@ public class Section {
     public void removeStudent(int id) {
         for (int i = 0; i < students.size(); i++) {
             if (students.get(i).studentId == id) {
-                students.remove(i);
                 System.out.println(students.get(i).firstName + " " + students.get(i).lastName);
+                students.remove(i);
             }
         }
     }
@@ -46,6 +46,15 @@ public class Section {
         }
         else {
             System.out.println("Class is full.");
+        }
+    }
+
+    public void getStudentById (int id, Section curr) {
+        //return index for students array to return the first name and last name of the student you are trying to get
+        for (int i = 0; i < curr.students.size(); i++) {
+            if (curr.students.get(i).studentId == id) {
+                System.out.println("You just removed " + curr.students.get(i).firstName + " " + curr.students.get(i).lastName + " from " + curr.name + " class.");
+            }
         }
     }
 }
