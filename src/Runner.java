@@ -1,7 +1,11 @@
 import java.util.*;
 
 
+
 public class Runner {
+
+    public static ArrayList<Student> allStudents = new ArrayList<Student>();
+    public static ArrayList<Section> allSections = new ArrayList<Section>();
 
     public static void main(String[] args) {
         /*System.out.println("Hello user. What is your name?");
@@ -84,10 +88,10 @@ public class Runner {
             System.out.println("Error: You did not enter an integer. Please try again");
             System.out.println("How many classes would you like to create? (enter an integer and make sure not to add any letters or spaces)");
             if (sc.hasNextInt()) {
-                b = sc.nextInt();
+            b = sc.nextInt();
             }
         }
-        for (int i = 0; i < b; i++); {
+        for (int i = 0; i <= b; i++); {
             System.out.println("What subject does this class teach? (Ex: Calculus)");
             String c = sc.next();
             System.out.println("What is the max number of students that can be in this class? (Ex: 30)");
@@ -102,8 +106,14 @@ public class Runner {
                     d = sc.nextInt();
                 }
             }
-
-            Section[] sectionList = new Section()
+            System.out.println("What would you like the first name of the this class's teacher be?");
+            String e = sc.next();
+            System.out.println("What about their last name?");
+            String f = sc.next();
+            Section A = new Section(c, d, e, f);
+            allSections.add(A);
         }
+
     }
 }
+
