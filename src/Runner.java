@@ -7,7 +7,18 @@ public class Runner {
     public static ArrayList<Student> allStudents = new ArrayList<Student>();
     public static ArrayList<Section> allSections = new ArrayList<Section>();
 
+    public static void testMethod(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Heyo!!! What would you like the first name of the this class's teacher be?");
+        String f = sc.next();
+        System.out.println("What about their last name?");
+        String g = sc.next();
+        System.out.println(f + " " + g);
+        //Section A = new Section(c, (d+e), f, g);
+    }
+
     public static void main(String[] args) {
+        testMethod();
         /*System.out.println("Hello user. What is your name?");
         Scanner sc = new Scanner(System.in);
         String a = sc.next();
@@ -99,21 +110,23 @@ public class Runner {
             if (sc.hasNextInt()) {
                 d = sc.nextInt();
             }
-            else {
+            int e = 0;
+            if (!sc.hasNextInt()) {
                 System.out.println("Error: You did not enter an integer. Please try again");
                 System.out.println("How many classes would you like to create? (enter an integer and make sure not to add any letters or spaces)");
                 if (sc.hasNextInt()) {
-                    d = sc.nextInt();
+                    e = sc.nextInt();
                 }
             }
-            System.out.println("What would you like the first name of the this class's teacher be?");
-            String e = sc.next();
-            System.out.println("What about their last name?");
+            System.out.println("Heyo!!! What would you like the first name of the this class's teacher be?");
             String f = sc.next();
-            Section A = new Section(c, d, e, f);
+            System.out.println("What about their last name?");
+            String g = sc.next();
+            System.out.println(f + " " + g);
+            Section A = new Section(c, (d+e), f, g);
             allSections.add(A);
-        }
 
+        }
     }
 }
 
