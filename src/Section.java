@@ -1,9 +1,4 @@
 import java.util.ArrayList;
-
-/**
- * Created by h205p2 on 9/29/17.
- */
-
 public class Section {
     Teacher teacher;
     String name;
@@ -19,10 +14,10 @@ public class Section {
         this.teacher = new Teacher(firstName, lastName);
     }
 
-    public void addStudent(String firstName, String lastName, int aweScore) {
+    public void addStudent(String firstName, String lastName, int aweScore, Section studentSection) {
 
         if (students.size() <= maxSize) {
-            Student student = new Student(firstName, lastName, aweScore);
+            Student student = new Student(firstName, lastName, aweScore, studentSection);
             students.add(student);
             sectionSeatsRemaining();
         }
@@ -31,9 +26,9 @@ public class Section {
         }
     }
 
-    public void removeStudent(int id) {
+    public void removeStudent(String firstname, String lastname) {
         for (int i = 0; i < students.size(); i++) {
-            if (students.get(i).studentId == id) {
+            if (students.get(i).firstName == firstname && students.get(i).lastName == lastname) {
                 System.out.println(students.get(i).firstName + " " + students.get(i).lastName);
                 students.remove(i);
             }
